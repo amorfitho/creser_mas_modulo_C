@@ -42,7 +42,7 @@
                 </div>
 
                 <div id="attendanceWarning" class="alert-box hidden">
-                    <p>⚠️ Cuidado con la asistencia. Si necesitas hablarlo, comunicarse a este contacto <strong>+56 9 XXX XXX XXX</strong> o <strong>comunicaciones@cresermas.cl</strong></p>
+                    <p>⚠️ Cuidado con la asistencia. Si necesitas hablarlo, comunicarse a este contacto <strong>+56 9 XXX XXX XXX</strong> o <strong>comunicaciones@crecermas.cl</strong></p>
                 </div>
             </div>
         </section>
@@ -75,11 +75,7 @@
         </section>
 
         <section id="detail-view" class="view">
-            <div class="detail-header">
-                <button onclick="showView('admin-view')" class="back-btn">← Volver</button>
-                <button onclick="openEditModal()" class="edit-btn">✏️ Editar Datos</button>
-            </div>
-            
+            <button onclick="showView('admin-view')" class="back-btn">← Volver al Dashboard</button>
             <h2>Detalle del Estudiante</h2>
             <div class="card">
                 <h3 id="detailName"></h3>
@@ -96,30 +92,11 @@
                         <p class="big-number" id="detailAttendance"></p>
                     </div>
                 </div>
+                <div class="chart-container-small">
+                    <canvas id="studentChart"></canvas>
+                </div>
             </div>
         </section>
-
-        <div id="editModal" class="modal hidden">
-            <div class="modal-content">
-                <span class="close-modal" onclick="closeEditModal()">&times;</span>
-                <h3>Editar Estudiante</h3>
-                <form id="editForm" onsubmit="saveChanges(event)">
-                    <label>Nombre:</label>
-                    <input type="text" id="editName" required>
-                    <label>Apellido:</label>
-                    <input type="text" id="editSurname" required>
-                    <label>Celular:</label>
-                    <input type="text" id="editPhone" required>
-                    <label>Promedio Notas (1.0 - 7.0):</label>
-                    <input type="number" step="0.1" min="1" max="7" id="editGrade" required>
-                    <label>Asistencia (0 - 100%):</label>
-                    <input type="number" min="0" max="100" id="editAttendance" required>
-                    
-                    <button type="submit" class="save-btn">Guardar Cambios</button>
-                </form>
-            </div>
-        </div>
-
     </main>
 
     <script src="script.js"></script>
